@@ -7,7 +7,7 @@ const ses = new SESClient({ region: "us-east-1" });
 export const handler = async (event) => {
   const command = new SendEmailCommand({
     Destination: {
-      ToAddresses: ["pra56.kum61@gmail.com"],
+      ToAddresses: ["recipient@example.com"],
     },
     Message: {
       Body: {
@@ -16,7 +16,7 @@ export const handler = async (event) => {
 
       Subject: { Data: "Test Email" },
     },
-    Source: "no-reply-aws@amazon.com",
+    Source: "your-verified-email@example.com",
   });
 
   try {
